@@ -2,24 +2,22 @@
      * EstadoPedido - Enum de estados del pedido
      */
 
-    const EstadoPedido = Object.freeze({
-        PENDIENTE: "PENDIENTE",
-        CONFIRMADO: "CONFIRMADO",
-        ENVIADO: "ENVIADO",
-        ENTREGADO: "ENTREGADO"
-        CANCELADO: "CANCELADO"
-        DESPACHADO: "DESPACHADO"
-    });
+    public enum EstadoPedido {
+        PENDIENTE,
+        CONFIRMADO,
+        ENVIADO,
+        ENTREGADO,
+        CANCELADO,
+        DESPACHADO
+    }
 
     /**
-    * EstadoEnvio - Enum de estados del envío
-    */
+     * EstadoEnvio - Enum de estados del envío
+     */
+    public enum EstadoEnvio {
+        PENDIENTE,
+        EN_RUTA,
+        ENTREGADO,
+        DEVUELTO
+    }
 
-    const EstadoEnvio = Object.freeze({
-        PENDIENTE: "PENDIENTE"
-        EN_RUTA: "EN_RUTA"
-        ENTREGADO: "ENTREGADO"
-        DEVUELTO: "DEVUELTO"
-    });
-
-    module.exports= {EstadoPedido, EstadoEnvio};
