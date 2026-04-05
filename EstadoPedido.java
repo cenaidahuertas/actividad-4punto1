@@ -1,6 +1,5 @@
-/**
-     * EstadoPedido - Enum de estados del pedido
-     */
+     // EstadoPedido - Enum de estados del pedido
+    
 
     public enum EstadoPedido {
         PENDIENTE,
@@ -11,9 +10,8 @@
         DESPACHADO
     }
 
-    /**
-     * EstadoEnvio - Enum de estados del envío
-     */
+     //EstadoEnvio - Enum de estados del envío
+     
     public enum EstadoEnvio {
         PENDIENTE,
         EN_RUTA,

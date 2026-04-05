@@ -11,7 +11,7 @@ public class Carrito {
         this.total = 0.0;
     }
 
-# - Getters -------------
+ // - Getters -------------
     public List<Producto> getProductosSeleccionados() {
         return productosSeleccionados;
     }
@@ -20,7 +20,7 @@ public class Carrito {
         return total;
     }
 
-# - Metodos -------------
+   // - Metodos -------------
     public void calcularTotal() {
         total = productosSeleccionados.stream()
                 .mapToDouble(Producto::getPrecio)

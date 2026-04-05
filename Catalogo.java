@@ -9,7 +9,7 @@ public class Catalogo {
         this.productos = new ArrayList<>();
     }
 
-# - Getters y Setters -------------
+ //- Getters y Setters -------------
     public List<Producto> getProductos() {
         return productos;
     }
@@ -20,8 +20,8 @@ public class Catalogo {
         this.productos = new ArrayList<>(valor);
     }
 
-# - metodos --------------
-    public Producto bucarProducto(String codigo) {
+ // - metodos --------------
+    public Producto buscarProducto(String codigo) {
         return productos.stream()
                 .filter(p -> p.getCodigo().equals(codigo))
                 .findFirst()

@@ -4,7 +4,7 @@ public class GestionarQueja extends Queja {
         super(idQueja, cliente, descripcion);
     }
 
-    # - metodos --------------
+     //- metodos --------------
 
     public void recibirQueja(Queja queja) {
         System.out.println("Recibiendo queja del cliente: " + queja.getCliente().getNombre() + ": " + queja.getDescripcion());

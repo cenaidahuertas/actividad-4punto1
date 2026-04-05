@@ -12,7 +12,7 @@ public class Queja {
         this.estado = "Registrada";
     }
 
-  #- Getters y Setters -------------
+   //- Getters y Setters -------------
 
     public String getIdQueja() {
         return idQueja;
@@ -47,7 +47,7 @@ public class Queja {
     }
 
 
-  # - metodos --------------
+   // - metodos --------------
 
     public void resolverQueja() {
         System.out.println("Queja resuelta para el cliente: " + cliente.getNombre() + ": " + descripcion);

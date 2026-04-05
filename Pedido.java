@@ -20,7 +20,7 @@ public class Pedido {
         this(idPedido, cliente, total, estado, LocalDate.now());
     }
 
-    # - Getters y Setters -------------
+     // - Getters y Setters -------------
 
     public String getIdPedido() {
         return idPedido;
@@ -70,7 +70,7 @@ public class Pedido {
         this.fecha = (valor != null) ? valor : LocalDate.now();
     }
 
-    # - Metodos -------------
+     //- Metodos -------------
 
     public void cambiarEstado(EstadoPedido nuevoEstado) {
         if (nuevoEstado == null) {

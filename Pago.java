@@ -10,7 +10,7 @@ public abstract class Pago {
         setCvv(cvv);
     }
 
-    #- Getters y Setters -------------
+     //- Getters y Setters -------------
     
     public String getNumeroTarjeta() {
         return numeroTarjeta;
@@ -54,7 +54,7 @@ public abstract class Pago {
         this.cvv = valor;
     }
 
-    # - Métodos abstractos -------------
+     // - Métodos abstractos -------------
 
     public abstract boolean procesarPago(double total);
 

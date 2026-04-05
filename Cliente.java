@@ -10,7 +10,7 @@ public class Cliente {
         setDireccion(direccion);
     }
 
-    # - Getters y Setters -------------
+    // - Getters y Setters -------------
     public String getNombre() {
         return nombre;
     }
@@ -47,7 +47,7 @@ public class Cliente {
         this.direccion = valor;
     }
 
-# - metodos --------------
+ // - metodos --------------
 
     public void verCatalogo(Catalogo catalogo) {
         System.out.println("Catálogo de productos:");

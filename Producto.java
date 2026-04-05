@@ -13,7 +13,7 @@ public class Producto {
         setCantidadDisponible(cantidadDisponible);
     }
 
-    || Getters y Setters 
+     // Getters y Setters ---------
 
     public String getCodigo() {
         return codigo;

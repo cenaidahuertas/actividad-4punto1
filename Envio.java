@@ -46,7 +46,7 @@ public class Envio {
         this.estado = valor;
     }
 
-    # - metodos -----------------
+     // - metodos -----------------
 
     public boolean despachar() {
         if (estado == EstadoPedido.PENDIENTE) {
