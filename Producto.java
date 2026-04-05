@@ -5,7 +5,7 @@ public class Producto {
     private double precio;
     private int cantidadDisponible;
 
-    public Producto(string codigo, String nombre, String descripcion, double precio, int cantidadDisponible) {
+    public Producto(String codigo, String nombre, String descripcion, double precio, int cantidadDisponible) {
         setCodigo(codigo);
         setNombre(nombre);
         setDescripcion(descripcion);
@@ -13,64 +13,41 @@ public class Producto {
         setCantidadDisponible(cantidadDisponible);
     }
 
-     // Getters y Setters ---------
-
-    public String getCodigo() {
-        return codigo;
-    }
-    public void setcodigo(String valor) {
-        valor=valor.trim();
-        if (valor.isEmpty()) {
-            throw new IllegalArgumentException("El código no puede estar vacío");
-        }
-        codigo = valor;
+    public String getCodigo() { return codigo; }
+    public void setCodigo(String valor) {
+        valor = valor.trim();
+        if (valor.isEmpty()) throw new IllegalArgumentException("El codigo no puede estar vacio.");
+        this.codigo = valor;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
+    public String getNombre() { return nombre; }
     public void setNombre(String valor) {
         valor = valor.trim();
-        if (valor.isEmpty()) {
-            throw new IllegalArgumentException("El nombre no puede estar vacío");
-        }
-        nombre = valor;
+        if (valor.isEmpty()) throw new IllegalArgumentException("El nombre no puede estar vacio.");
+        this.nombre = valor;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
+    public String getDescripcion() { return descripcion; }
     public void setDescripcion(String valor) {
         valor = valor.trim();
-        if (valor.isEmpty()) {
-            throw new IllegalArgumentException("La descripción no puede estar vacía");
-        }
-        descripcion = valor;
+        if (valor.isEmpty()) throw new IllegalArgumentException("La descripcion no puede estar vacia.");
+        this.descripcion = valor;
     }
 
-    public double getPrecio() {
-        return precio;
-    }
+    public double getPrecio() { return precio; }
     public void setPrecio(double valor) {
-        if (valor < 0) {
-            throw new IllegalArgumentException("El precio no puede ser negativo");
-        }
-        precio = valor;
+        if (valor <= 0) throw new IllegalArgumentException("El precio debe ser positivo.");
+        this.precio = valor;
     }
 
-    public int getCantidadDisponible() {
-        return cantidadDisponible;
-    }
+    public int getCantidadDisponible() { return cantidadDisponible; }
     public void setCantidadDisponible(int valor) {
-        if (valor < 0) {
-            throw new IllegalArgumentException("La cantidad disponible no puede ser negativa");
-        }
-        cantidadDisponible = valor;
+        if (valor < 0) throw new IllegalArgumentException("La cantidad no puede ser negativa.");
+        this.cantidadDisponible = valor;
     }
 
     @Override
     public String toString() {
-        return String.format("Producto[codigo=%s, nombre=%s, descripcion=%s, precio=%.2f, cantidadDisponible=%d]", 
-            codigo, nombre, descripcion, precio, cantidadDisponible);
+        return String.format("[%s] %s - $%.2f (Stock: %d)", codigo, nombre, precio, cantidadDisponible);
     }
 }

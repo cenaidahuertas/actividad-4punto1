@@ -1,13 +1,12 @@
 public class PagoTarjeta extends Pago {
 
-    public PagoTarjeta(String numeroTarjeta, String fechaVencimiento, String cvv) {
-        super(numeroTarjeta, fechaVencimiento, cvv);
+    public PagoTarjeta(String numero, String fechaVencimiento, String cvv) {
+        super(numero, fechaVencimiento, cvv);
     }
 
     @Override
     public boolean procesarPago(double total) {
-        // Lógica para procesar el pago con tarjeta
-        System.out.println("Procesando pago con tarjeta por un total de: " + total);
+        if (total <= 0) throw new IllegalArgumentException("El total debe ser mayor a cero.");
         return true;
     }
 }

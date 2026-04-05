@@ -1,5 +1,4 @@
 public class Transportadora {
-
     private String nombre;
     private double costoEnvio;
     private int tiempoEntrega;
@@ -10,75 +9,47 @@ public class Transportadora {
         setCostoEnvio(costoEnvio);
         setTiempoEntrega(tiempoEntrega);
         this.estadoEnvio = EstadoPedido.PENDIENTE;
-
-    // - Getters y Setters --------------
-
-    public String getNombre() {
-        return nombre;
     }
+
+    public String getNombre() { return nombre; }
     public void setNombre(String valor) {
         valor = valor.trim();
-        if (valor.isEmpty()) {
-            throw new IllegalArgumentException("El nombre de la transportadora no puede estar vacío.");
-        }
+        if (valor.isEmpty()) throw new IllegalArgumentException("El nombre no puede estar vacio.");
         this.nombre = valor;
     }
 
-    public double getCostoEnvio() {
-        return costoEnvio;
-    }
+    public double getCostoEnvio() { return costoEnvio; }
     public void setCostoEnvio(double valor) {
-        if (valor < 0) {
-            throw new IllegalArgumentException("El costo de envío no puede ser negativo.");
-        }
+        if (valor < 0) throw new IllegalArgumentException("El costo no puede ser negativo.");
         this.costoEnvio = valor;
     }
 
-    public int getTiempoEntrega() {
-        return tiempoEntrega;
-    }
+    public int getTiempoEntrega() { return tiempoEntrega; }
     public void setTiempoEntrega(int valor) {
-        if (valor < 0) {
-            throw new IllegalArgumentException("El tiempo de entrega no puede ser negativo.");
-        }
+        if (valor <= 0) throw new IllegalArgumentException("El tiempo debe ser positivo.");
         this.tiempoEntrega = valor;
     }
 
-    public EstadoPedido getEstadoEnvio() {
-        return estadoEnvio;
-    }
-    public void setEstadoEnvio(EstadoPedido estadoEnvio) {
-        this.estadoEnvio = estadoEnvio;
-    }
-
-    // - metodos -----------------
+    public EstadoPedido getEstadoEnvio() { return estadoEnvio; }
+    public void setEstadoEnvio(EstadoPedido estadoEnvio) { this.estadoEnvio = estadoEnvio; }
 
     public double calcularEnvio(Pedido pedido) {
-        if (pedido == null) {
-            throw new IllegalArgumentException("El pedido no puede ser nulo.");
-        }
-        return pedido.getTotal() * costoEnvio;
+        if (pedido == null) throw new IllegalArgumentException("El pedido no puede ser null.");
+        return pedido.getTotal() + costoEnvio;
     }
 
     public String despacharPedido(Pedido pedido) {
-        if (pedido == null) {
-            throw new IllegalArgumentException("El pedido no puede ser nulo.");
-        }
+        if (pedido == null) throw new IllegalArgumentException("El pedido no puede ser null.");
         this.estadoEnvio = EstadoPedido.ENVIADO;
-        return String.format("Pedido despachado por %s. Costo de envío: %.2f. Tiempo estimado de entrega: %d días.",
-                pedido,getIdPedido(),nombre, tiempoEntrega);
+        return String.format("Pedido %s despachado por %s. Tiempo: %d dias.",
+            pedido.getIdPedido(), nombre, tiempoEntrega);
     }
 
     @Override
     public String toString() {
-        return "Transportadora{" +
-                nombre + '\'' +
-                ", costoEnvio=" + String.format("%.2f", costoEnvio) +
-                "\n" + "Tiempo de entrega: " + tiempoEntrega + " días\n" +
-                "Estado de envío: " + estadoEnvio +
-                '}';
-                
-        }   
+        return "Transportadora: " + nombre +
+            "\nCosto de Envio: $" + String.format("%.2f", costoEnvio) +
+            "\nTiempo de Entrega: " + tiempoEntrega + " dias" +
+            "\nEstado del Envio: " + estadoEnvio;
     }
 }
-        

@@ -1,51 +1,40 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Catalogo {
     private List<Producto> productos;
+
+    public Catalogo(List<Producto> productos) {
+        if (productos == null) throw new IllegalArgumentException("La lista no puede ser null.");
+        this.productos = new ArrayList<>(productos);
+    }
 
     public Catalogo() {
         this.productos = new ArrayList<>();
     }
 
- //- Getters y Setters -------------
-    public List<Producto> getProductos() {
-        return productos;
-    }
+    public List<Producto> getProductos() { return productos; }
+
     public void setProductos(List<Producto> valor) {
-        if (valor == null) {
-            throw new IllegalArgumentException("La lista de productos no puede ser nula");
-        }
+        if (valor == null) throw new IllegalArgumentException("La lista no puede ser null.");
         this.productos = new ArrayList<>(valor);
     }
 
- // - metodos --------------
     public Producto buscarProducto(String codigo) {
-        return productos.stream()
-                .filter(p -> p.getCodigo().equals(codigo))
-                .findFirst()
-                .orElse(null);
-    }
-
-    public List<Producto> filtrar(String categoria) {
-        if (categoria == null || categoria.trim().isEmpty()) {
-            throw new IllegalArgumentException("La categoría no puede ser nula o vacía");
+        for (Producto p : productos) {
+            if (p.getCodigo().equals(codigo)) return p;
         }
-        return productos.stream()
-                .filter(p -> p.getCategoria().equalsIgnoreCase(categoria))
-                .collect(Collectors.toList());
+        return null;
     }
 
     @Override
     public String toString() {
-        if (productos.isEmpty()) 
-        return "El catálogo está vacío";
-        StringBuilder sb = new StringBuilder("Catálogo de productos:\n");
+        if (productos.isEmpty()) return "El catalogo esta vacio.";
+        StringBuilder sb = new StringBuilder("Catalogo de Productos:\n");
         for (Producto p : productos) {
-            sb.append(String.format("- %s (codigo: %s, precio: %.2f)\n", p.getNombre(), p.getCodigo(), p.getPrecio()));
+            sb.append(String.format("- %s (Codigo: %s, Precio: $%.2f)%n",
+                p.getNombre(), p.getCodigo(), p.getPrecio()));
         }
         return sb.toString();
     }
 }
-

@@ -1,5 +1,4 @@
 public class Envio {
-
     private Pedido pedido;
     private Transportadora empresaTransportadora;
     private EstadoPedido estado;
@@ -10,54 +9,34 @@ public class Envio {
         setEstado(estado);
     }
 
-    public Envio(Pedido pedido, Transportadora empresaTransportadora, EstadoPedido estado) {
-        this(pedido, empresaTransportadora, EstadoPedido.PENDIENTE);
-    }
-
-    // - Getters y Setters --------------
-
-    public Pedido getPedido() {
-        return pedido;
-    }
+    public Pedido getPedido() { return pedido; }
     public void setPedido(Pedido valor) {
-        if (valor == null) {
-            throw new IllegalArgumentException("El pedido no puede ser nulo.");
-        }
+        if (valor == null) throw new IllegalArgumentException("El pedido no puede ser null.");
         this.pedido = valor;
     }
 
-    public Transportadora getEmpresaTransportadora() {
-        return empresaTransportadora;
-    }
+    public Transportadora getEmpresaTransportadora() { return empresaTransportadora; }
     public void setEmpresaTransportadora(Transportadora valor) {
-        if (valor == null) {
-            throw new IllegalArgumentException("La empresa transportadora no puede ser nula.");
-        }
+        if (valor == null) throw new IllegalArgumentException("La transportadora no puede ser null.");
         this.empresaTransportadora = valor;
     }
 
-    public EstadoPedido getEstado() {
-        return estado;
-    }
+    public EstadoPedido getEstado() { return estado; }
     public void setEstado(EstadoPedido valor) {
-        if (valor == null) {
-            throw new IllegalArgumentException("El estado del envío no puede ser nulo.");
-        }
+        if (valor == null) throw new IllegalArgumentException("El estado no puede ser null.");
         this.estado = valor;
     }
 
-     // - metodos -----------------
-
     public boolean despachar() {
         if (estado == EstadoPedido.PENDIENTE) {
-            estado = EstadoPedido.EN_TRANSITO;
+            estado = EstadoPedido.DESPACHADO;
             return true;
         }
         return false;
     }
 
     public boolean entregar() {
-        if (estado == EstadoPedido.EN_TRANSITO) {
+        if (estado == EstadoPedido.DESPACHADO) {
             estado = EstadoPedido.ENTREGADO;
             return true;
         }
@@ -66,9 +45,8 @@ public class Envio {
 
     @Override
     public String toString() {
-        return "Envio del pedido ID " + pedido.getIdpedido() + "\n"
-                + "Transportadora: " + empresaTransportadora.getNombre() + "\n"
-                + "Estado del envío: " + estado;
+        return "Envio del Pedido ID: " + pedido.getIdPedido() +
+               "\nEmpresa: " + empresaTransportadora.getNombre() +
+               "\nEstado: " + estado;
     }
 }
-

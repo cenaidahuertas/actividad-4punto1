@@ -1,66 +1,41 @@
 public class Queja {
-
-    private String idQueja;
-    private Cliente cliente;
+    private String id;
+    private String cliente;
     private String descripcion;
     private String estado;
 
-    public Queja(String idQueja, Cliente cliente, String descripcion) {
-        this.idQueja = idQueja;
+    public Queja(String id, String cliente, String descripcion) {
+        this.id = id;
         this.cliente = cliente;
         this.descripcion = descripcion;
-        this.estado = "Registrada";
+        this.estado = "REGISTRADA";
     }
 
-   //- Getters y Setters -------------
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
 
-    public String getIdQueja() {
-        return idQueja;
-    }
+    public String getCliente() { return cliente; }
+    public void setCliente(String cliente) { this.cliente = cliente; }
 
-    public void setIdQueja(String idQueja) {
-        this.idQueja = idQueja;
-    }
+    public String getDescripcion() { return descripcion; }
+    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
 
-    public Cliente getCliente() {
-        return cliente;
-    }
+    public String getEstado() { return estado; }
+    public void setEstado(String estado) { this.estado = estado; }
 
-    public void setCliente(String cliente) {
-        this.cliente = cliente;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-
-   // - metodos --------------
-
-    public void resolverQueja() {
-        System.out.println("Queja resuelta para el cliente: " + cliente.getNombre() + ": " + descripcion);
+    public void registrarQueja() {
+        System.out.println("Queja registrada por " + cliente + ": " + descripcion);
     }
 
     public void actualizarEstado(String nuevoEstado) {
         this.estado = nuevoEstado;
-        System.out.println("Estado de la queja actualizado a: " + nuevoEstado);
     }
 
     @Override
     public String toString() {
-        return String.format("Queja ID: %s | Cliente: %s | Descripción: %s | Estado: %s",
-                idQueja, cliente.getNombre(), descripcion, estado);
-    }   
+        return "Queja ID    : " + id +
+            "\nCliente     : " + cliente +
+            "\nDescripcion : " + descripcion +
+            "\nEstado      : " + estado;
+    }
 }
