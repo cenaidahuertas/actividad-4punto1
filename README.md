@@ -1,3 +1,4 @@
+<img width="1114" height="981" alt="Diagrama sin título-Ejercicio 1 drawio" src="https://github.com/user-attachments/assets/bfe7c2ed-7934-49b9-be19-81f108f5c012" />
 # 🛒 Sistema de E-Commerce - Carrito de Compras
 
 ## 📝 Descripción
