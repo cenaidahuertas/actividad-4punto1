@@ -18,30 +18,22 @@ Sistema completo de e-commerce con gestión de:
 actividad-4punto1/
 ├── src/
 │   └── main/
-│       ├── java/                    # Código fuente Java
-│       │   ├── Main.java           # Punto de entrada
-│       │   ├── Cliente.java
-│       │   ├── Carrito.java
-│       │   ├── Catalogo.java
-│       │   ├── Producto.java
-│       │   ├── Pedido.java
-│       │   ├── EstadoPedido.java   # Enum de estados
-│       │   ├── Pago.java           # Clase abstracta
-│       │   ├── PagoTarjeta.java
-│       │   ├── Envio.java
-│       │   ├── Transportadora.java
-│       │   ├── Queja.java
-│       │   └── GestionarQueja.java
-│       └── js/                      # Código fuente JavaScript
-│           └── EstadoPedido.js     # Enums en JavaScript
-├── target/                          # Archivos compilados (.class)
-├── .gitignore                       # Archivos a ignorar en Git
-├── README.md                        # Este archivo
-├── ESTRUCTURA.md                    # Documentación estructura proyecto
-├── COMPILACION.md                   # Guía compilación y ejecución
-├── CLEAN_CODE.md                    # Mejoras de Clean Code
-├── STANDARDS.md                     # Estándares por lenguaje
-└── .git/                            # Repositorio Git
+    ├── java/                    # Código fuente Java
+    │   ├── Main.java           # Punto de entrada
+    │   ├── Cliente.java
+    │   ├── Carrito.java
+    │   ├── Catalogo.java
+    │   ├── Producto.java
+    │   ├── Pedido.java
+    │   ├── EstadoPedido.java   # Enum de estados
+    │   ├── Pago.java           # Clase abstracta
+    │   ├── PagoTarjeta.java
+    │   ├── Envio.java
+    │   ├── Transportadora.java
+    │   ├── Queja.java
+    │   └── GestionarQueja.java
+    └── js/                      
+                       
 ```
 
 ---
